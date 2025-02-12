@@ -31,10 +31,8 @@ exports.loginUser = async (req, res) => {
         message: "Yanlış şifre",
       });
     }
-    res.status(200).json({
-      status: "success",
-      message: "Giriş yapıldı",
-    });
+    req.session.userID = user._id;
+    res.status(200).redirect("/");
   } catch (error) {
     res.status(400).json({
       status: "fail",
