@@ -29,7 +29,7 @@ include('partials/_navigation.ejs');%>
                   </div>
                   <div class="course-desc">
                     <p>
-                      <%= courses[i].description %>
+                      <%= courses[i].description.substring(0,100) + " ..." %>
                     </p>
                   </div>
                 </div>
